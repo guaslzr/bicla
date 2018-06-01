@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,22 +16,9 @@
   </head>
   <body>
     <header>
-      <nav class="navigation">
-        <a href="bicicomm.html"><i class="fas fa-home"></i></a>
-        <a href="#">Arma tu bici</a>
-        <a href="#">Comprá tu bici</a>
-        <a href="#">Nosotros</a>
-        <a href="faqs.html">FAQ</a>
-        <a href="registro.html">REGISTRARSE</a>
-        <a href="#"><i class="fas fa-search"></i></a>
-        <a href="login.html"><i class="fas fa-user-circle"></i></a>
-        <a href="carrito"><i class="fas fa-shopping-cart"></i></a>
-      </nav>
-      <article class="mobile-menu">
-        <a href="#"><i class="fas fa-search"></i></a>
-        <a href="login.html"><i class="fas fa-user-circle"></i></a>
-        <a href="carrito"><i class="fas fa-shopping-cart"></i></a>
-      </article>
+
+      <?php include_once('navigation.php') ?>
+      
       <article>
         <img class="banner" src="img/banner-ppal.jpg" width="100%">
       </article>
@@ -49,14 +37,8 @@
         </div>
       </section>
     </main>
-    <footer>
-      <a href="#">Galeria</a>
-      <a href="#">Nosotros</a>
-      <a href="faqs.html">FAQs</a>
-      <a href="#">Support</a>
-      <a href="#">Tracking</a>
-      <a href="#">Terms</a>
-    </footer>
+   
+   <?php include_once('footer.php'); ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

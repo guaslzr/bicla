@@ -6,22 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title></title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/master.css">
   </head>
   <body>
     <header>
-      <nav class="navigation">
-        <a href="bicicomm.html"><i class="fas fa-home"></i></a>
-        <a href="#">Galeria</a>
-        <a href="#">Arma tu bici</a>
-        <a href="#">Tienda</a>
-        <a href="#">Nosotros</a>
-        <a href="faqs.html">FAQ</a>
-        <a href="registro.html">REGISTRARSE</a>
-        <a href="lupa"><i class="fas fa-search"></i></a>
-        <a href="login.html"><i class="fas fa-user-circle"></i></a>
-        <a href="carrito"><i class="fas fa-shopping-cart"></i></a>
-      </nav>
+        <?php include_once('navigation.php'); ?>
     </header>
     <div class="logo" >
     <img align="center" src="img/logo.png" alt="" width="250vw" >
@@ -39,13 +28,6 @@
         <p class="link_sign">Ya tenes una cuenta? <a href="login.html">Ingresa aca</p>
       </div>
     </form>
-    <footer>
-      <a href="#">Galeria</a>
-      <a href="#">Nosotros</a>
-      <a href="faqs.html">FAQs</a>
-      <a href="#">Support</a>
-      <a href="#">Tracking</a>
-      <a href="#">Terms</a>
-    </footer>
+    <?php include_once('footer.php'); ?>
   </body>
 </html>
