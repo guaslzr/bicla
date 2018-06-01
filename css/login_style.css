@@ -1,0 +1,77 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('../img/darkbike.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #060606;
+  color: #eaeaea;
+}
+
+#emailHelp {
+  font-size: 11px;
+}
+
+.form-container {
+  margin-top: 10vh;
+  padding: 50px 60px;
+  border-radius: 49px 49px 49px 49px;
+  -moz-border-radius: 49px 49px 49px 49px;
+  -webkit-border-radius: 49px 49px 49px 49px;
+
+  -webkit-box-shadow: 0px 0px 50px 0px rgba(176,167,176,0.3);
+  -moz-box-shadow: 0px 0px 50px 0px rgba(176,167,176,0.3);
+  box-shadow: 0px 0px 50px 0px rgba(176,167,176,0.3);
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.navigation {
+  display: flex;
+  align-self: center;
+  justify-content: space-around;
+  height: 80px;
+	width: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+.navigation a {
+  margin: 30px 0px 30px 0px;
+  text-transform: uppercase;
+  color: white;
+
+}
+footer {
+  display: flex;
+  align-self: center;
+  align-items: baseline;
+  margin-top: 5vw;
+  justify-content: space-around;
+  height: 60px;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+}
+
+footer a{
+  margin: 30px 0px 30px 0px;
+  text-transform: uppercase;
+  align-self: center;
+  color: white;
+}
+
+footer a:hover{
+	color: white;
+}
