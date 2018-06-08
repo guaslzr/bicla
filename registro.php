@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title></title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/master.css">
-  </head>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<title>Registro</title>
+</head>
   <body>
     <header>
         <?php include_once('navigation.php'); ?>
     </header>
-    <div class="logo" >
-    <img align="center" src="img/logo.png" alt="" width="250vw" >
-    </div>
-    <form class="form_registro" action="registro.php" method="post">
-      <h2 class="titulo">COMPLETA LOS DATOS PARA REGISTRARTE</h2>
-      <div class="container">
-        <input type="text" name="nombre" placeholder="Nombres" class="mitad" required>
-        <input type="text" name="apellidos" placeholder="Apellidos" class="mitad" required>
-        <input type="email" name="mail" placeholder="E-mail" class="linea_completa" required>
-        <input type="number" name="telefono" placeholder="Telefono" class="linea_completa" required>
-        <input type="text" name="user" placeholder="Usuario" class="mitad" required>
-        <input type="password" name="contrasena" placeholder="Contraseña" class="mitad" required>
-        <input type="submit" value="Registrarse" class="btn">
-        <p class="link_sign">Ya tenes una cuenta? <a href="login.html">Ingresa aca</p>
+    <div class="login-page">
+      <div class="form">
+        <form class="register-form">
+          <input type="text" name="nombre" placeholder="Nombre" class="mitad" required>
+          <input type="text" name="apellidos" placeholder="Apellido" class="mitad" required>
+          <input type="text" name="user" placeholder="Usuario" class="mitad" required>
+          <input type="password" placeholder="Contraseña" required/>
+          <input type="password" name="contrasena" placeholder="Confirma tu contraseña" class="mitad" required>
+          <input type="email" name="name" placeholder="Ingresa tu email" required/>
+          <input type="text" name="telefono" placeholder="Numero de telefono (opcional)" class="linea_completa">
+          <button type="submit" name="submit">Registrarse</button>
+          <p class="message">Ya estás registrado? <a href="login.php">Ingresa acá</a></p>
+        </form>
       </div>
-    </form>
+    </div>
     <?php include_once('footer.php'); ?>
   </body>
 </html>
