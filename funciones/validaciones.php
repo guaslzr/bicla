@@ -20,24 +20,14 @@ function validarRegistro($datos){
 
     if (!filter_var($datos['email'], FILTER_VALIDATE_EMAIL)) {
         $errores['email'] = 'Debe ingresar un Email válido';
-<<<<<<< HEAD
-=======
-    } elseif ($datos['email'] != $datos['email_confirm']) {
-        $errores['email_confirm'] = 'El Email y su confirmación deben coincidir';
->>>>>>> 39a09182227abf10374ec1eeefead0dc6207daf7
+
     } elseif (buscarUsuario(EMAIL_FIELD, $datos['email'])) {
         $errores['email'] = 'El Email ingresado ya existe en nuestra base de datos';
     }
-
     if (strlen($datos['contrasena']) < 6) {
         $errores['contrasena'] = 'La contraseña debe tener al menos 6 caracteres';
-<<<<<<< HEAD
     } elseif ($datos['contrasena-confirm'] != $datos['contrasena-confirm']) {
         $errores['contrasena-confirm'] = 'La Contraseña y su confirmación deben coincidir';
-=======
-    } elseif ($datos['contrasena'] != $datos['contrasena_confirm']) {
-        $errores['contrasena_confirm'] = 'La Contraseña y su confirmación deben coincidir';
->>>>>>> 39a09182227abf10374ec1eeefead0dc6207daf7
     }
 
     if ($_FILES['avatar']['error'] == UPLOAD_ERR_NO_FILE) {
