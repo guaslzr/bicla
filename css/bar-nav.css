@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-size: 15px;
+  font-family: 'Sunflower', sans-serif!important;
+}
+
+.header {
+  background-color: #333333;
+  padding: 80px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  position: static;
+  top: 0;
+  width: 100%;
+}
+
+#navbar a {
+  color: #f1f1f1;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: inline-flex;
+}
+
+#navbar a:hover {
+  background-color: #333333;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #333333;
+  color: white;
+}
+
+
+.main_nav{
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto 0;
+}
+
+.main_nav a {
+  padding: 30px 50px 30px 50px;
+  text-transform: uppercase;
+  color: white;
+}
+
+
+/* FOOTER STYLE*/
+
+.footer-style {
+  overflow: hidden;
+  background-color: #000000;
+  align-items: center;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+}
+
+.main-footer a {
+  display: inline-table;
+  color: #f1f1f1;
+  align-items: center;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
+}
+
+.main-footer  a:hover {
+  background-color: #333333;
+  color: black;
+}
+
+.main-footer  a.active {
+  background-color: #333333;
+  color: white;
+}
+
+.small-text {
+  color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+.footer,
+.push {
+  height: 50px;
+}

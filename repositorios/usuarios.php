@@ -17,8 +17,7 @@ function guardarUsuario($datos){
 
 function buscarUsuario($campo, $valor){
     $usuarios = obtenerContenido(USUARIOS_KEY);
-    foreach ($usuarios as $usuario)
-    {
+    foreach ($usuarios as $usuario){
         if ($usuario[$campo] == $valor) {
             return $usuario;
         }

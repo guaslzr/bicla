@@ -19,16 +19,11 @@ function validarRegistro($datos){
     }
 
     if (!filter_var($datos['email'], FILTER_VALIDATE_EMAIL)) {
-
-        $errores['email'] = 'Debes ingresar un Email válido';
-
+        $errores['email'] = 'Debe ingresar un Email válido';
     } elseif ($datos['email'] != $datos['email_confirm']) {
-
-        $errores['email_confirm'] = 'El Email no coincide';
-
+        $errores['email_confirm'] = 'El Email y su confirmación deben coincidir';
     } elseif (buscarUsuario(EMAIL_FIELD, $datos['email'])) {
-
-        $errores['email'] = 'El Email ingresado ya existe';
+        $errores['email'] = 'El Email ingresado ya existe en nuestra base de datos';
     }
 
     if (strlen($datos['contrasena']) < 6) {

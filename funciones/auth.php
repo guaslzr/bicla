@@ -1,5 +1,5 @@
 <?php
-require_once ('repositorios/usuarios.php');
+require_once('repositorios/usuarios.php');
 
 function registrar($datos){
     
@@ -13,20 +13,21 @@ function registrar($datos){
         return $errores;
     }
     $datos['avatar'] = $avatar;
+
     unset ($datos['terminos']);
-    unset ($datos['contrasena_confirm']);
+    unset ($datos['contrasena-confirm']);
 
     guardarUsuario($datos);
 }
 
 function guardarArchivo($filename){
-    if($_FILES["avatar"]["error"]== UPLOAD_ERR_OK){
+    if($_FILES["avatar"]["error"] === UPLOAD_ERR_OK){
         
         $nombre=$_FILES["avatar"]["name"];
         
         $archivo=$_FILES["avatar"]["tmp_name"];
         
-        $ext=pathinfo($nomobre,PATHINFO_EXTENSION);
+        $ext=pathinfo($nombre,PATHINFO_EXTENSION);
 
         $path=$_SERVER['DOCUMENT_ROOT'] . "/uploads/$filename.$ext";
 
@@ -34,7 +35,6 @@ function guardarArchivo($filename){
 
         return "$filename.$ext";
     }
-
     return false;
 }
 
@@ -52,7 +52,7 @@ function loguear($datos){
     $_SESSION['user']=$usuario;
 
     if(isset($datos['recordarme'])){
-        setcookie('usuer', $usuario['id'], time()+ 60 * 60 * 24 * 365 * 5 );
+        setcookie('user', $usuario['id'], time()+ 60 * 60 * 24 * 365 * 5 );
     }
 }
 

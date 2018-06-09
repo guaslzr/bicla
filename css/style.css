@@ -8,11 +8,12 @@
   z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 200px auto 200px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
 .form input {
   font-family: 'Sunflower', sans-serif;
   outline: 0;
@@ -22,9 +23,9 @@
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 12px;
 }
-.form .button {
+.form button {
   font-family: 'Sunflower', sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -41,10 +42,23 @@
 .form button:hover,.form button:active,.form button:focus {
   background: #333333;
 }
+
+#recordar input{
+  display: block;
+  margin: auto;
+  font-size: 12px;
+  width: 2px!important;
+}
+
+#redordar p {
+  margin: 1px;
+  padding: 1px;
+}
+
 .form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
-  font-size: 13px;
+  font-size: 12px;
 }
 .form .message a {
   color: #000;
@@ -57,7 +71,6 @@
   margin: 0 auto;
 }
 .container:before, .container:after {
-
   display: block;
   clear: both;
 }
@@ -89,10 +102,11 @@ padding-bottom: 30px;
 }
 
 body {
-  background-image: url(../img/login_bg.jpg);
+  background-image:url('../img/login_bg.jpg');
   width: inherit;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Sunflower', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
