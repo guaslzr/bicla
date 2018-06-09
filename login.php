@@ -1,63 +1,78 @@
+<?php require_once('global.php'); ?>
+
+<?php
+
+require_once('funciones/validaciones.php');
+require_once('funciones/auth.php');
+
+$errores = [];
+
+if ($_POST) {
+
+    $errores = validarLogin($_POST);
+
+    if (!$errores) { 
+
+        $errores = loguear($_POST);
+
+        if (!$errores) {
+            header('location: index.php');
+            exit;
+        }
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/style.css">
+    
     <title>Login</title>
   </head>
   <body>
-  <header>
-    <?php include_once('navigation.php'); ?>
-  </header>
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-4 col-sm-12 col-xs-12"></div>
-          <div class="col-md-4 col-sm-12 col-xs-12">
-                <form class= "form-container">
-                  <h2>Login</h2>
-                      <div class="form-group">
-                          <label for="exampleInputEmail1">
-                            Email
-                          </label>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                            <small id="emailHelp" class="form-text text-muted">
-                              Tranquilo, no compartiremos tus datos personales.
-                            </small>
-                      </div>
-                      <div class="form-group">
-                            <label for="exampleInputPassword1">
-                              Password
-                            </label>
-                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                      </div>
-                      <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">
-                              Recordarme
-                            </label>
-                      </div>
-                      <small id="emailHelp" class="olvidocontrasenia">
-                        <a href="">¿Olvidó su contraseña?</a>
-                      </small>
-                      <button type="submit" class="btn btn-secondary btn-block">
-                       Entrar
-                      </button>
-                </form>
-          </div>
-          <div class="col-md-4 col-sm-12 col-xs-12"></div>
-          <?php include_once('footer.php'); ?>
-      </div>
-    </div>
+<?php
+    include_once ('navigation.php');
+?>
+<div class="row">
+    <div class="form">
+    <form action="" method="post">
+        <?php
+            if ($errores) {?>
+                <div class="error2">
+                    <div ><strong>Error!</strong></div>
+                    <ul>
+                        <?php
+                        
+                        foreach($errores as $error) {
+                        ?>
+                            <li><?php echo $error ?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
+        <img class="logo" src="img/bicla_black.png" width="100px;">
 
+                <input type="text" class="form-control" id="email" name="email" value="<?php echo ($_POST['email'] ?? '') ?>" placeholder="Email">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
+                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
+
+        
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="chk-recordarme" name="recordarme"> <p class="message"> Recordarme en este equipo </p>
+            </label>
+        </div>
+        
+        <input type="submit" class="button" value="ENTRAR" />
+        <p class="message">No estás registrado? <a href="registro.php">Registrarse</a></p>
+    </form>
+</div>
+<?php include_once ('footer.php'); ?>
+</body>
 </html>
