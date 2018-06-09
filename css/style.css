@@ -24,7 +24,7 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+.form .button {
   font-family: 'Sunflower', sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -44,7 +44,7 @@
 .form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
-  font-size: 12px;
+  font-size: 13px;
 }
 .form .message a {
   color: #000;
@@ -89,7 +89,7 @@ padding-bottom: 30px;
 }
 
 body {
-  background-image: url(login_bg.jpg);
+  background-image: url(../img/login_bg.jpg);
   width: inherit;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,33 +1,88 @@
+<?php require_once ('global.php');?>
+
+<?php 
+require_once ('funciones/auth.php');
+require_once ('funciones/validaciones.php');
+?>
+
+<?php
+$errores=[];
+
+if ($_POST){
+
+  $errores = validarRegistro($_POST);
+
+  if(!errores){
+
+    $errores=registrar($_POST);
+
+    if (!errores){
+      header ('location: index.php');
+      exit;
+    }
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title></title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/master.css">
+    <title>Registro</title>
+    <link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header>
-        <?php include_once('navigation.php'); ?>
-    </header>
-    <div class="logo" >
-    <img align="center" src="img/logo.png" alt="" width="250vw" >
-    </div>
-    <form class="form_registro" action="registro.php" method="post">
-      <h2 class="titulo">COMPLETA LOS DATOS PARA REGISTRARTE</h2>
-      <div class="container">
-        <input type="text" name="nombre" placeholder="Nombres" class="mitad" required>
-        <input type="text" name="apellidos" placeholder="Apellidos" class="mitad" required>
-        <input type="email" name="mail" placeholder="E-mail" class="linea_completa" required>
-        <input type="number" name="telefono" placeholder="Telefono" class="linea_completa" required>
-        <input type="text" name="user" placeholder="Usuario" class="mitad" required>
-        <input type="password" name="contrasena" placeholder="Contraseña" class="mitad" required>
-        <input type="submit" value="Registrarse" class="btn">
-        <p class="link_sign">Ya tenes una cuenta? <a href="login.html">Ingresa aca</p>
+    <?php
+      $pageTitle='Registracion';
+      include_once('navigation.php');
+    ?>
+
+    <div class="login-page">
+      <?php
+      if($errores){
+      ?>
+        <div class="alert alert-danger">
+            <div><strong>Error!</strong></div>
+            <ul>
+                <?php
+                foreach($errores as $error) {
+                ?>
+                    <li><?php echo $error ?></li>
+                <?php } ?>
+            </ul>
+        </div>
+    <?php } ?>
+      
+      
+      <div class="form">
+        <form action="" method="POST" enctype="multipart/form-data" class="register-form">
+          <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($_POST['nombre'] ?? '') ?>" placeholder="Ingresa tu Nombre" required/>
+
+          <input type="text" class="form-control" id="apellido" name="apellido" value="<?php echo($_POST['apellido'] ?? '') ?>" placeholder="Ingresa tu Apellido" required/>
+
+          <input type="text" class="form-control" id="username" name="username" value="<?php echo ($_POST['username'] ?? '') ?>" placeholder="Ingresa tu Nombre de Usuario" require/>
+
+          <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingrese Contraseña" required/>
+
+          <input type="password" class="form-control" id="contrasena-confirm" name="contrasena-confirm" placeholder="Confirma tu contraseña" required>
+
+          <input type="email" class="form-control" id="email" name="email" value="<?php echo ($_POST['email'] ?? '') ?>"placeholder="Ingresa tu email" required/>
+
+          <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo ($_POST['telefono'] ?? '') ?>"placeholder="Numero de telefono (opcional)">
+
+          <input type="file" name="avatar"/>
+          
+          <div class= "checkbox">
+          <input type="checkbox" id="chk-terminos" name="terminos"> Acepto los términos y condiciones
+          </div>
+          <input type="submit" class="button" value="Registrarse"/>
+
+          <p class="message">Ya estás registrado? <a href="login.php">Ingresa acá</a></p>
+        </form>
       </div>
-    </form>
-    <?php include_once('footer.php'); ?>
+    </div>
+     <?php// include_once('footer.php'); ?>
   </body>
 </html>
