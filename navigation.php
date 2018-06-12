@@ -14,7 +14,6 @@
         <a href="#">Tienda</a>
         <a href="#">Nosotros</a>
         <a href="faqs.php">FAQs</a>
-<<<<<<< HEAD
 
         <?php
         if (isset($_SESSION) && empty($_SESSION)){?>
@@ -26,9 +25,7 @@
             <a href="logout.php">LOG OUT</a>
         <?php } ?>
 
-=======
         <a href="registro.php">REGISTRARSE</a>
->>>>>>> 39a09182227abf10374ec1eeefead0dc6207daf7
         <div class="sec_nav">
             <a href="#"><i class="fas fa-search"></i></a>
             <a href="login.php"><i class="fas fa-user-circle"></i></a>

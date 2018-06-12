@@ -11,3 +11,4 @@ if (!isLoggedIn()){
         unset($usuario['contrasena']);
         $_SESSION['user'] = $usuario;
     }
+}
