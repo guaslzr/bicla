@@ -25,7 +25,6 @@
             <a href="logout.php">LOG OUT</a>
         <?php } ?>
 
-        <a href="registro.php">REGISTRARSE</a>
         <div class="sec_nav">
             <a href="#"><i class="fas fa-search"></i></a>
             <a href="login.php"><i class="fas fa-user-circle"></i></a>

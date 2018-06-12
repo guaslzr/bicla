@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"usuarios":[{"nombre":"pepe","apellido":"pepe","username":"pepe","email":"pepe@pepe.com","contrasena":"$2y$10$7qjwkeH.easzE\/yxh5YAPOVzqpNdGgx8PeeO74EpBczAVY\/54roCa","telefono":"","avatar":"5b1c665a1ad07.png","id":1}]}
-=======
-{"usuarios":[{"nombre":"pepe","apellido":"pepe","username":"pepe","email":"pepe@pepe.com","contrasena":"$2y$10$q\/kPzUSo2z3sh51Meosoiux3USvDEWwQfvg6rDBPatNKxIrudGZeC","telefono":"","avatar":"5b199661988de.png","id":1}]}
->>>>>>> 39a09182227abf10374ec1eeefead0dc6207daf7
+{"usuarios":[{"nombre":"G","apellido":"S","username":"gs","email":"gs@gmail.com","contrasena":"$2y$10$DAw5VN.ctm5UHI7K9mYUSuDkZ0GTq6Bfw67OkuTGZoKjimbqzRXuq","telefono":"","avatar":"5b1ff3c49a83a.PNG","id":1}]}
