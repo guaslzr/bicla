@@ -57,21 +57,27 @@ body {
 
 
 /* FOOTER STYLE*/
+div.main-footer {
+  margin: auto!important;
+  display: table!important;
+  position: static;
+  bottom: 0px;
+}
 
 .footer-style {
   overflow: hidden;
   background-color: #000000;
   align-items: center;
   height: 100px;
-  position: fixed;
-  bottom: 0;
+  position: static;
+  bottom: 0px;
+  margin: 0px;
   width: 100%;
-  margin: auto;
   text-align: center;
 }
 
 .main-footer a {
-  display: inline-table;
+  display: inline-block;
   color: #f1f1f1;
   align-items: center;
   padding: 20px;
@@ -95,13 +101,4 @@ body {
   font-size: 10px;
   text-align: center;
   padding-bottom: 30px;
-}
-
-.wrapper {
-  min-height: 100%;
-  margin-bottom: -50px;
-}
-.footer,
-.push {
-  height: 50px;
 }

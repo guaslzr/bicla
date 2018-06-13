@@ -1,8 +1,7 @@
 <link rel="stylesheet" href="css/bar-nav.css">
 <body>
-  <div class="wrapper">
-    <div class="footer-style">
-        <div class="main-footer">
+    <div class="footer-style" style= "position:static; bottom: 0px; margin: 0px;">
+        <div class="main-footer" style= "display: table; margin: auto;">
           <a href="#">Tienda</a>
           <a href="#">Support</a>
           <a href="faqs.php">FAQs</a>
@@ -11,7 +10,4 @@
         </div>
             <div class="small-text">BICLA 2018. Todos los Derechos Reservados.</div>
     </div>
-    <div class="push"></div>
-  </div>
-  <footer class="footer"></footer>
 </body>

@@ -11,7 +11,7 @@ if ($_POST) {
 
     $errores = validarLogin($_POST);
 
-    if (!$errores) { 
+    if (!$errores) {
 
         $errores = loguear($_POST);
 
@@ -30,9 +30,8 @@ if ($_POST) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
-    <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/style.css">
-    
+
     <title>Login</title>
   </head>
   <body>
@@ -48,7 +47,7 @@ if ($_POST) {
                     <div ><strong>Error!</strong></div>
                     <ul>
                         <?php
-                        
+
                         foreach($errores as $error) {
                         ?>
                             <li><?php echo $error ?></li>
@@ -62,13 +61,13 @@ if ($_POST) {
 
                 <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
 
-        
+
         <div class="checkbox">
             <label>
                 <input type="checkbox" id="chk-recordarme" name="recordarme"> <p class="message"> Recordarme en este equipo </p>
             </label>
         </div>
-        
+
         <input type="submit" class="button" value="ENTRAR" />
         <p class="message">No estás registrado? <a href="registro.php">Registrarse</a></p>
     </form>
