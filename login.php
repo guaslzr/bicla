@@ -36,6 +36,7 @@ if ($_POST) {
   </head>
   <body>
 <?php
+    if (isset($_SESSION) && empty($_SESSION)){
     include_once ('navigation.php');
 ?>
 <div class="row">
@@ -73,5 +74,6 @@ if ($_POST) {
     </form>
 </div>
 <?php include_once ('footer.php'); ?>
+<?php }else header('Location: index.php') ?>
 </body>
 </html>

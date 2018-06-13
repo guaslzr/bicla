@@ -1,4 +1,6 @@
-<?php include_once('global.php')?>
+<?php include_once('global.php');
+
+?>
 <!doctype html>
 <html lang="en">
   <head>

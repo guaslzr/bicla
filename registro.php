@@ -35,6 +35,7 @@ if ($_POST){
   </head>
   <body>
     <?php
+      if (isset($_SESSION) && empty($_SESSION)){
       $pageTitle='Registracion';
       include_once('navigation.php');
     ?>
@@ -55,7 +56,6 @@ if ($_POST){
         </div>
     <?php } ?>
       
-      
       <div class="form">
         <form action="" method="POST" enctype="multipart/form-data" class="register-form">
           <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($_POST['nombre'] ?? '') ?>" placeholder="Ingresa tu Nombre" required/>
@@ -72,7 +72,8 @@ if ($_POST){
       
           <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo ($_POST['telefono'] ?? '') ?>"placeholder="Numero de telefono (opcional)">
 
-          <input type="file" name="avatar"/>
+          <label for="file">Seleccionar una foto de perfil</label>
+          <input type="file" name="avatar" accept="image/*" />
           
           <div class= "checkbox">
           <input type="checkbox" id="chk-terminos" name="terminos"> Acepto los términos y condiciones
@@ -84,5 +85,6 @@ if ($_POST){
       </div>
     </div>
      <?php include_once('footer.php'); ?>
+     <?php }else header('Location: index.php') ?>
   </body>
 </html>
