@@ -9,10 +9,8 @@ $usernameT=$_SESSION['user']['username'];
 ?>
 
 <nav id="navbar">
-    
     <div class="main_nav">
         <a href="index.php"><img src="./img/bicla_menu.png"></a>
-        <a href="#">Nosotros</a>
         <a href="#">Arma tu bici</a>
         <a href="#">Tienda</a>
         <a href="#">Nosotros</a>
@@ -22,16 +20,13 @@ $usernameT=$_SESSION['user']['username'];
         if (isset($_SESSION) && empty($_SESSION)){?>
             <a href="registro.php">REGISTRARSE</a>
         <?php } ?>
-
-        
-
         <div class="sec_nav">
  
             <a href="#"><i class="fas fa-search"></i></a>
 
             <?php
             if (isset($_SESSION) && empty($_SESSION)){?>
-               <a href="login.php"><i title="LOG IN" class="fas fa-user"></i><?php echo "  " . "SIGN IN" ?></a> 
+               <a href="login.php"><i title="LOG IN" class="fas fa-user"></i><?php echo "  " . "INGRESAR" ?></a> 
             <?php } ?>
                 <?php
                 if (isset($_SESSION) && !empty($_SESSION)){?>
@@ -40,7 +35,7 @@ $usernameT=$_SESSION['user']['username'];
 
                 <?php
                 if (isset($_SESSION)&& !empty($_SESSION)){?>
-                    <a href="logout.php"><i title="LOG OUT" class="fas fa-user-slash"></i></a>
+                    <a href="logout.php"><i title="SALIR" class="fas fa-user-slash"></i></a>
                 <?php } ?>
 
                     <a href="#"><i class="fas fa-shopping-cart"></i></a>

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css/bar-nav.css">
 <body>
-    <div class="footer-style" style= "position:static; bottom: 0px; margin: 0px;">
-        <div class="main-footer" style= "display: table; margin: auto;">
+    <div class="footer-style" >
+        <div class="main-footer">
           <a href="#">Tienda</a>
           <a href="#">Support</a>
           <a href="faqs.php">FAQs</a>
