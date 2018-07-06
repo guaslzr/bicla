@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+  }
+  body {
+    background-image: url('../img/home-bike.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  
+  h2 {
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  p {
+    margin: 20px;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 24px;
+  }
+  
+  .row{
+    align-content: center;
+    text-align: center;
+    display: flex;
+  }
+  
+  .row .contenedor{
+    height: 250px;
+    width: 1000px;
+    border-bottom: 200px;
+    margin: 0 auto;
+  }
+  
+  .row .contenedor p{
+    background-color: #dddd;
+    height: 210px;
+    width: 1000px;
+    border-bottom: 200px;
+  }

@@ -13,7 +13,7 @@ $usernameT=$_SESSION['user']['username'];
         <a href="index.php"><img src="./img/bicla_menu.png"></a>
         <a href="#">Arma tu bici</a>
         <a href="#">Tienda</a>
-        <a href="#">Nosotros</a>
+        <a href="nosotros.php">Nosotros</a>
         <a href="faqs.php">FAQs</a>
 
         <?php
