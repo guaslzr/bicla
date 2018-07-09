@@ -25,6 +25,5 @@ include_once('global.php');
             Por eso trabajamos con las mejores marcas de bicicletas, manteniendo la máxima variedad de artículos en stock en nuestro catálogo para que los tengas todos con la máxima disponibilidad</p>
           </div>
         </div>
-    <?php include_once('footer.php'); ?>
-    </body>
+      </body>
 </html>
