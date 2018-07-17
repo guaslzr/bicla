@@ -109,13 +109,13 @@ div.main-footer {
 }
 
 .main-footer  a:hover {
-  background-color: #333333;
-  color: black;
+  text-decoration: underline;
+  color: #557a47;
 }
 
 .main-footer  a.active {
-  background-color: #333333;
-  color: white;
+  background-color: #ffffff;
+  color: #557a47;
 }
 
 .small-text {
