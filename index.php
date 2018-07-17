@@ -17,9 +17,10 @@
     <header>
       <?php include_once('navigation.php') ?>
       </header>
-      <div class="container_main">
-        <img class="banner1" src="img2/bg.png" width="100%">
-          <div class="options">
+        <div class="banner1" style="display: grid;">
+        <img src="img2/bg.png">
+        </div>
+          <section class="options">
               <div class="container">
                   <img src="img2/arma_bici-img.png" href="#" class="image">
                   <div class="overlay">
@@ -38,9 +39,7 @@
                     <div class="text">VER ACCESORIOS</div>
                   </div>
               </div>
-          </div>
-      </div>
-
+          </section>
    <?php include_once('footer.php'); ?>
   </body>
 </html>

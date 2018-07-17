@@ -10,7 +10,7 @@ $usernameT=$_SESSION['user']['username'];
 
 <nav id="navbar">
     <div class="main_nav">
-        <a href="index.php"><img src="./img/bicla_menu.png"></a>
+        <a href="index.php"><img src="./img/bicla_menu.png" height="70px;"></a>
         <a href="#">Arma tu bici</a>
         <a href="#">Tienda</a>
         <a href="nosotros.php">Nosotros</a>
@@ -21,16 +21,16 @@ $usernameT=$_SESSION['user']['username'];
             <a href="registro.php">REGISTRARSE</a>
         <?php } ?>
         <div class="sec_nav">
- 
+
             <a href="#"><i class="fas fa-search"></i></a>
 
             <?php
             if (isset($_SESSION) && empty($_SESSION)){?>
-               <a href="login.php"><i title="LOG IN" class="fas fa-user"></i><?php echo "  " . "INGRESAR" ?></a> 
+               <a href="login.php"><i title="LOG IN" class="fas fa-user"></i><?php echo "  " . "INGRESAR" ?></a>
             <?php } ?>
                 <?php
                 if (isset($_SESSION) && !empty($_SESSION)){?>
-                   <a href="#"><i title="LOG IN" class="fas fa-user"></i><?php echo "  ". $usernameT ?></a> 
+                   <a href="#"><i title="LOG IN" class="fas fa-user"></i><?php echo "  ". $usernameT ?></a>
                 <?php } ?>
 
                 <?php

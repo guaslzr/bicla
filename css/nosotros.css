@@ -2,44 +2,48 @@
     box-sizing: border-box;
   }
   body {
-    background-image: url('../img/home-bike.jpg');
+    background-image: url('../img/whiteb.jpg');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: auto;
   }
-  
-  
+
+
   h2 {
-    color: #ffffff;
-    font-size: 24px;
+    color: #333333;
+    font-size: 35px;
     text-align: center;
-    padding: 50px;
+    padding: 20px;
   }
-  
+
   p {
-    margin: 20px;
-    color: #ffffff;
+    margin: 50px;
+    color: #333333;
     padding: 10px;
-    font-size: 24px;
+    font-size: 16px;
   }
-  
-  .row{
+
+  .logo {
+  margin: auto;
+  display: block;
+  align-self: center;
+  }
+
+  .photo {
+  width: 60%;
+  align-self: center;
+  }
+
+  .info{
     align-content: center;
     text-align: center;
     display: flex;
+    margin: 30px;
   }
-  
+
   .row .contenedor{
     height: 250px;
-    width: 1000px;
+    width: 800px;
     border-bottom: 200px;
     margin: 0 auto;
   }
-  
-  .row .contenedor p{
-    background-color: #dddd;
-    height: 210px;
-    width: 1000px;
-    border-bottom: 200px;
-    border-radius: 30px;
-  }
-

@@ -1,63 +1,55 @@
+
 * {
 	box-sizing: border-box;
 }
-.banner1 {
-  position: relative;
-  top: 0px;
-  margin: 0px;
-}
-.bannerinfo {
-  display: none;
-  margin: 0px;
-  padding: 0px;
+
+
+.banner1 img {
+	padding:0px;
+	margin:0px;
+	width: 100%;
 }
 
-.logo1 {
-  float: left;
-  left: 900px;
-  top: 200px;
-  display: none;
+.banner1 {
+	margin: 0px;
+	align-self: center;
+	padding: 0px;
 }
-.botones {
-  position: relative;
-  top: 200px;
-  left: 50px;
-  float: left;
-}
+
 .options {
-  display: inline-flex;
+  display: flex;
+	align-self: bottom;
   width: 100%;
+	height: 100%;
   margin: 0px;
+	border: 0px;
 }
-h1 {
-  display: none;
-}
-h2 {
-  display: none;
-}
+
 .container {
   position: relative;
+	height: 100%;
   width: 100%;
   margin: 0px;
+	border: 0px;
+	padding: 0px;
 }
 
 .image {
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .overlay {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
   opacity: 0;
   transition: .5s ease;
   background-color: rgba(000,000,000,0.7);
+	margin: 0px;
+	padding: 0px;
 }
 
 .container:hover .overlay {
@@ -69,7 +61,7 @@ h2 {
   color: white;
   letter-spacing: 2px;
   font-weight: bolder;
-  font-size: 45px;
+  font-size: 2.5em;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -79,6 +71,6 @@ h2 {
 
 @media only screen and (max-width: 480px){
   .options{
-    display: none;
+    display: block;
   }
 }

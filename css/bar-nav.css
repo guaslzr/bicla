@@ -30,7 +30,6 @@ body {
 }
 
 #navbar a {
-  color: #f1f1f1;
   text-align: center;
   padding:16px;
   text-decoration: none;
@@ -39,20 +38,19 @@ body {
 }
 
 #navbar a:hover {
-  background-color: #333333;
-  color: black;
+  text-decoration: underline;
+  color: #557a47;
 }
 
 #navbar a.active {
-  background-color: #333333;
-  color: white;
+  background-color: #ffffff;
+  color: #557a47;
 }
 
 
 .main_nav a {
-  padding: 30px 50px 30px 50px;
+  padding: 50px 50px 50px 50px;
   text-transform: uppercase;
-  color: white;
 }
 
 /* MEDIA QUERYS NAV */
@@ -60,24 +58,25 @@ body {
   #navbar{
     min-width: 100%;
     height: 100%;
+    display: block;
   }
 
   .main_nav{
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 1vw;
   }
   .main_nav img{
     width: 12vw;
-    height: 12vw;
+    height: auto;
   }
 
   #navbar a{
     padding: 1vw;
     font-size: 10px;
   }
-  
-  
+
+
 }
 
 /* FOOTER STYLE*/
