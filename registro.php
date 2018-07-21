@@ -1,6 +1,6 @@
 <?php require_once ('global.php');?>
 
-<?php 
+<?php
 require_once ('funciones/auth.php');
 require_once ('funciones/validaciones.php');
 ?>
@@ -55,7 +55,7 @@ if ($_POST){
             </ul>
         </div>
     <?php } ?>
-      
+
       <div class="form">
         <form action="" method="POST" enctype="multipart/form-data" class="register-form">
           <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($_POST['nombre'] ?? '') ?>" placeholder="Ingresa tu Nombre" required/>
@@ -69,15 +69,15 @@ if ($_POST){
           <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingrese Contraseña" required/>
 
           <input type="password" class="form-control" id="contrasena-confirm" name="contrasena-confirm" placeholder="Confirma tu contraseña" required/>
-      
+
           <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo ($_POST['telefono'] ?? '') ?>"placeholder="Numero de telefono (opcional)">
 
-          <label for="file">Seleccionar una foto de perfil</label>
+          <label for="file" class="message">Selecciona una foto de perfil</label>
+
           <input type="file" name="avatar" accept="image/*" />
-          
-          <div class= "checkbox">
-          <input type="checkbox" id="chk-terminos" name="terminos"> Acepto los términos y condiciones
-          </div>
+
+          <p class="message"><input type="checkbox" name="terminos">Acepto los términos y condiciones</p>
+
           <input type="submit" class="button" value="Registrarse"/>
 
           <p class="message">Ya estás registrado? <a href="login.php">Ingresa acá</a></p>

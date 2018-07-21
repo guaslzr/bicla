@@ -56,18 +56,12 @@ if ($_POST) {
                     </ul>
                 </div>
             <?php } ?>
-        <img class="logo" src="img/bicla_black.png" width="100px;">
-
+                <h3>¡Hola! Ingresa tus datos</h3>
                 <input type="text" class="form-control" id="email" name="email" value="<?php echo ($_POST['email'] ?? '') ?>" placeholder="Email">
 
                 <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
 
-
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" id="chk-recordarme" name="recordarme"> <p class="message"> Recordarme en este equipo </p>
-            </label>
-        </div>
+        <p class="message"><input type="checkbox" name="recordarme">Recordarme en este equipo</p>
 
         <input type="submit" class="button" value="ENTRAR" />
         <p class="message">No estás registrado? <a href="registro.php">Registrarse</a></p>

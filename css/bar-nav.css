@@ -38,19 +38,20 @@ body {
 }
 
 #navbar a:hover {
-  text-decoration: underline;
-  color: #557a47;
+  color: #8c99a7;
 }
 
 #navbar a.active {
-  background-color: #ffffff;
-  color: #557a47;
+  color: #8c99a7;
 }
 
 
 .main_nav a {
   padding: 50px 50px 50px 50px;
   text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+
 }
 
 /* MEDIA QUERYS NAV */
@@ -80,6 +81,7 @@ body {
 }
 
 /* FOOTER STYLE*/
+
 div.main-footer {
   margin: auto!important;
   display: table!important;
@@ -100,7 +102,7 @@ div.main-footer {
 
 .main-footer a {
   display: inline-block;
-  color: #f1f1f1;
+  color: #ffffff;
   align-items: center;
   padding: 1.5vw;
   text-decoration: none;
@@ -109,13 +111,11 @@ div.main-footer {
 }
 
 .main-footer  a:hover {
-  text-decoration: underline;
-  color: #557a47;
+  color: #8c99a7;
 }
 
 .main-footer  a.active {
-  background-color: #ffffff;
-  color: #557a47;
+  color: #8c99a7;
 }
 
 .small-text {

@@ -15,11 +15,11 @@ include_once('global.php');
     <header>
         <?php include_once('navigation.php') ?>
     </header>
+      <h2>Nosotros somos BICLA</h2>
       <div class="info">
           <div class="contenedor">
-            <img class="logo" src="img/bicla_black.png" width="100px;">
-            <h2>Nosotros somos Bicla</h2>
-             <img class="photo" src="img/team2.jpg">
+             <img class="photo" src="img/team.jpg">
+             <img class="logo" src="img/bicla_black.png" width="100px;">
             <p>Bicla es una tienda de bicicletas que cuenta con una experiencia en el sector de más de 30 años donde la máxima de trabajo es cuidar la relación con nuestros clientes ofreciendo un servicio de calidad y confianza.
             Por eso trabajamos con las mejores marcas de bicicletas, manteniendo la máxima variedad de artículos en stock en nuestro catálogo para que los tengas todos con la máxima disponibilidad.
             <br><br>
