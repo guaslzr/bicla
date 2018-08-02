@@ -10,7 +10,7 @@ $usernameT=$_SESSION['user']['username'];
 
 <nav id="navbar">
     <div class="main_nav">
-        <a href="index.php"><img src="./img/bicla_menu.png" height="70px;"></a>
+        <a href="index.php"><img src="./img/bicla_menu.png"></a>
         <a href="#">Arma tu bici</a>
         <a href="#">Tienda</a>
         <a href="nosotros.php">Nosotros</a>

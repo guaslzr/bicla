@@ -18,23 +18,23 @@
       <?php include_once('navigation.php') ?>
       </header>
         <div class="banner1" style="display: grid;">
-        <img src="img2/bg.png">
+        <img src="img/bg.png">
         </div>
           <section class="options">
               <div class="container">
-                  <img src="img2/arma_bici-img.png" href="#" class="image">
+                  <img src="img/arma_bici-img.png" href="#" class="image">
                   <div class="overlay">
                      <div class="text">ARMA TU BICI</div>
                   </div>
               </div>
               <div class="container">
-                  <img src="img2/compra_bici-img.png" href="#" class="image">
+                  <img src="img/compra_bici-img.png" href="#" class="image">
                   <div class="overlay">
                     <div class="text">COMPRA UNA BICI</div>
                   </div>
               </div>
               <div class="container">
-                  <img src="img2/accesorios_bici-img.png" href="#"  class="image">
+                  <img src="img/accesorios_bici-img.png" href="#"  class="image">
                   <div class="overlay">
                     <div class="text">VER ACCESORIOS</div>
                   </div>

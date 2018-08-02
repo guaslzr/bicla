@@ -15,9 +15,16 @@ a {
   font-size: 16px;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #8c99a7;
+}
+
 h3 {
   margin-top: 30px;
-  font-size: 17px;
+  display: block;
+  text-align: right;
+  font-size: 18px;
   color: #eaeaea;
 }
 
