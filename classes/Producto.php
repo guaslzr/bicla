@@ -1,24 +1,25 @@
 <?php
 
-    class Prodcuto{
+    class Producto {
         private $id;
         private $nombre;
+        private $modelo;
         private $precio;
         private $stock;
-        //ESTO NOSE SI VA
         private $marca_id;
         private $tipo_id;
 
-        public function __construct($nombre,$precio,$stock,$marca_id,$tipo_id, $id = null)
+        public function __construct($id, $nombre,$modelo,$precio, $stock,$marca_id,$tipo_id = null)
         {
             $this->id = $id;
             $this->nombre=$nombre;
+            $this->modelo=$modelo;
             $this->precio=$precio;
             $this->stock=$stock;
             //
             $this->marca_id=$marca_id;
             $this->tipo_id=$tipo_id;
-            
+
         }
 
         //Getters & Setters
@@ -26,7 +27,7 @@
         {
             return $this->id;
         }
-    
+
         public function setId($id)
         {
             $this->id = $id;
@@ -36,17 +37,27 @@
         {
             return $this->nombre;
         }
-    
+
         public function setNombre($nombre)
         {
             $this->nombre = $nombre;
+        }
+
+        public function getModelo()
+        {
+            return $this->modelo;
+        }
+
+        public function setModelo($modelo)
+        {
+            $this->modelo = $modelo;
         }
 
         public function getPrecio()
         {
             return $this->precio;
         }
-    
+
         public function setPrecio($precio)
         {
             $this->precio = $precio;
@@ -56,7 +67,7 @@
         {
             return $this->stock;
         }
-    
+
         public function setStock($stock)
         {
             $this->stock = $stock;
@@ -66,7 +77,7 @@
         {
             return $this->marca_id;
         }
-    
+
         public function setMarca_id($marca_id)
         {
             $this->marca_id = $marca_id;
@@ -76,7 +87,7 @@
         {
             return $this->tipo_id;
         }
-    
+
         public function setTipo_id($tipo_id)
         {
             $this->tipo_id = $tipo_id;
