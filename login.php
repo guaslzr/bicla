@@ -52,9 +52,9 @@
             <form action="login.php" method="post">
 
                 <h3>¡Hola! Ingresa tus datos</h3>
-                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                <input type="text" class="form-control" type="text" name="email"placeholder="Email">
 
-                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
+                <input type="password" class="form-control" type="password" name="password" placeholder="Contraseña">
 
         <p class="message"><input type="checkbox" name="recordarme">Recordarme en este equipo</p>
 
@@ -64,6 +64,6 @@
     </form>
 </div>
 <?php include_once ('footer.php'); ?>
-<?php }else header('Location: index.php') ?>
+<?php }else header('Location: index.php'); ?>
 </body>
 </html>

@@ -30,7 +30,7 @@ $usernameT=$_SESSION['user']['username'];
             <?php } ?>
                 <?php
                 if (isset($_SESSION) && !empty($_SESSION)){?>
-                   <a href="#"><i title="LOG IN" class="fas fa-user"></i><?php echo "  ". $usernameT ?></a>
+                   <a href="index.php"><i title="PERFIL" class="fas fa-user"></i><?php echo "  ". "VER PERFIL". $usernameT ?></a>
                 <?php } ?>
 
                 <?php

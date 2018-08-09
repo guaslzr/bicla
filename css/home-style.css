@@ -56,7 +56,12 @@
   opacity: 0.7;
 }
 
-.text {
+a {
+text-decoration: none;
+}
+
+.text a {
+	text-decoration: none;
   font-family: 'Sunflower', sans-serif;
   color: white;
   letter-spacing: 2px;

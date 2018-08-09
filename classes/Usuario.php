@@ -11,19 +11,19 @@
 
         public function __construct($nombre, $apellido, $username, $email, $password, $id = null)
         {
-            if ($id == null) {
-                //SI el id que llega es = a null, hasheame la password porque es un new Usuario que viene de REGISTRO
-                $this->password = password_hash($password, PASSWORD_DEFAULT);
-            } else {
-                //PARA CUALQUIER OTRA INSTANCIA DE USUARIO, deja la password como esta para que sea usada en password_verify()
-                $this->password = $password;
-            }
+          if ($id == null) {
+              //SI el id que llega es = a null, hasheame la password porque es un new Usuario que viene de REGISTRO
+              $this->password = password_hash($password, PASSWORD_DEFAULT);
+          } else {
+              //PARA CUALQUIER OTRA INSTANCIA DE USUARIO, deja la password como esta para que sea usada en password_verify()
+              $this->password = $password;
+          }
             $this->id = $id;
             $this->nombre=$nombre;
             $this->apellido=$apellido;
             $this->username=$username;
             $this->email = $email;
-            
+
         }
 
         //Getters & Setters
@@ -31,7 +31,7 @@
         {
             return $this->id;
         }
-    
+
         public function setId($id)
         {
             $this->id = $id;
@@ -41,7 +41,7 @@
         {
             return $this->nombre;
         }
-    
+
         public function setNombre($nombre)
         {
             $this->id = $nombre;
@@ -51,7 +51,7 @@
         {
             return $this->apellido;
         }
-    
+
         public function setApellido($apellido)
         {
             $this->id = $apellido;
@@ -61,7 +61,7 @@
         {
             return $this->username;
         }
-    
+
         public function setUsername($username)
         {
             $this->id = $username;
@@ -76,7 +76,7 @@
         {
             $this->email = $email;
         }
-     
+
         public function getPassword()
         {
             return $this->password;
@@ -95,18 +95,18 @@
                 //ENTRA a esta logica
                 $nombre=$_FILES["avatar"]["name"];
                 $archivo=$_FILES["avatar"]["tmp_name"];
-    
+
                 $ext = pathinfo($nombre, PATHINFO_EXTENSION);
                 //SI la foto no es JPG o JPEG
                 if ($ext != "jpg" && $ext != "jpeg") {
                     //Dame error
                     return "Error";
                 }
-    
+
                 $miArchivo = dirname(__FILE__);
-                $miArchivo = $miArchivo . "/../img/";
+                $miArchivo = $miArchivo . "/../img/usuarios/";
                 $miArchivo = $miArchivo . $this->getEmail() . "." . $ext;
-    
+
                 move_uploaded_file($archivo, $miArchivo);
             }
         }

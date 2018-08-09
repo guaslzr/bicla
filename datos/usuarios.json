@@ -1,1 +1,1 @@
-{"usuarios":[{"nombre":"G","apellido":"S","username":"gs","email":"gs@gmail.com","contrasena":"$2y$10$DAw5VN.ctm5UHI7K9mYUSuDkZ0GTq6Bfw67OkuTGZoKjimbqzRXuq","telefono":"","avatar":"5b1ff3c49a83a.PNG","id":1},{"nombre":"pepe","apellido":"pepe","username":"pepe","email":"pepe@pepe.com","contrasena":"$2y$10$tUp0T0iYwkdsMv8Ly24E2ODTr0Z.axoc9OZRI6uCO7HqxMnt3xJoG","telefono":"","avatar":"5b208bd63588d.jpg","id":2}]}
+{"nombre":"test", "apellido":"test", "username":"test", "email":"mail@mail.com","password":"12345","id":1}

@@ -24,19 +24,19 @@
               <div class="container">
                   <img src="img/arma_bici-img.png" href="#" class="image">
                   <div class="overlay">
-                     <div class="text">ARMA TU BICI</div>
+                     <div class="text"><a href="#">ARMA TU BICI</a></div>
                   </div>
               </div>
               <div class="container">
-                  <img src="img/compra_bici-img.png" href="#" class="image">
+                  <img src="img/compra_bici-img.png" href="producto.php" class="image">
                   <div class="overlay">
-                    <div class="text">COMPRA UNA BICI</div>
+                    <div class="text"><a href="producto.php">COMPRA UNA BICI</a></div>
                   </div>
               </div>
               <div class="container">
                   <img src="img/accesorios_bici-img.png" href="#"  class="image">
                   <div class="overlay">
-                    <div class="text">VER ACCESORIOS</div>
+                    <div class="text"><a href="#">VER ACCESORIOS</a></div>
                   </div>
               </div>
           </section>

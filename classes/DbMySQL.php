@@ -14,9 +14,9 @@
         //Nuestro constructor es basicamente PDO
         {
             $dsn = 'mysql:host=localhost;dbname=bicla_db;
-            charset=utf8;port=3306';
+            charset=utf8;port=8889';
             $username = 'root';
-            $password = '';
+            $password = 'root';
 
             try {
                 $this->conexion = new PDO($dsn, $username, $password);

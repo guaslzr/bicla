@@ -20,14 +20,14 @@
 
 		if (count($errores) == 0) {
 			//Si count() de $errores = 0, creo mi nueva instancia de usuario
-			$usuario = new Usuario($_POST["email"], $_POST["password"]);
+			$usuario = new Usuario($_POST["nombre"], $_POST["apellido"], $_POST["username"], $_POST["email"], $_POST["password"]);
 			//Como en ESTE caso mi clase usuario tiene tambien la responsabilidad de guardar su imagen, la guardamos
 			$usuario->guardarImagen($usuario->getEmail());
 			//Aca guardamos el user en nuestra base de datos
 			$usuario = $db->guardarUsuario($usuario);
 			//Lo pasamos por auth para derivarlo al perfil
 			$auth->login($_POST["email"]);
-			header("Location: perfil.php");
+			header("Location: index.php");
 			exit;
 
 		}
@@ -53,18 +53,18 @@
   <body>
 			<?php include_once('navigation.php'); ?>
       <div class="form">
-        <form action="" class="register-form" action="registro.php" method="post" enctype="multipart/form-data">
-          <input type="text" class="form-control" id="nombre" name="name" value="" placeholder="Ingresa tu Nombre" required/>
+        <form  class="register-form" action="registro.php" method="post" enctype="multipart/form-data">
+          <input type="text" class="form-control" "nombre" name="nombre" type="name" value="" placeholder="Ingresa tu Nombre" required/>
 
-          <input type="text" class="form-control" id="apellido" name="apellido" value="" placeholder="Ingresa tu Apellido" required/>
+          <input type="text" class="form-control"  name="apellido" type="apellido" value="" placeholder="Ingresa tu Apellido" required/>
 
-          <input type="text" class="form-control" id="username" name="username" value="" placeholder="Ingresa tu Nombre de Usuario" require/>
+          <input type="text" class="form-control"  name="username" type="username" value="" placeholder="Ingresa tu Nombre de Usuario" require/>
 
-          <input type="email" class="form-control" id="email" name="email" value="<?=$emailDefault?>" placeholder="Ingresa tu email" required/>
+          <input type="email" class="form-control" name="email" value="<?=$emailDefault?>" placeholder="Ingresa tu email" required/>
 
-          <input type="password" class="form-control" id="contrasena" name="password" placeholder="Ingrese Contraseña" required/>
+          <input type="password" class="form-control" type="password" name="password" placeholder="Ingrese Contraseña" required/>
 
-          <input type="password" class="form-control" id="contrasena-confirm" name="cpassword" placeholder="Confirma tu contraseña" required/>
+          <input type="password" class="form-control" type="password" name="cpassword" placeholder="Confirma tu contraseña" required/>
 
           <label for="file" class="message">Selecciona una foto de perfil</label>
 
