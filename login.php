@@ -1,27 +1,29 @@
-<?php require_once('global.php'); ?>
-
 <?php
+    include_once("loader.php");
 
-require_once('funciones/validaciones.php');
-require_once('funciones/auth.php');
+    if ($auth->loginControl()) {
+        //SI la instancia de Auth, haciendo uso de su metodo loginControl(), devuelve true, es porque el usuario ya inicio sesion y no necesitamos mostrarle esta pagina, asi que sistematicamente lo derivamos a su perfil.
+        header("Location:perfil.php");
+        exit;
+	}
 
-$errores = [];
+	$errores = [];
+	if ($_POST) {
+        //SI hay $_POST
+        $errores = $validator->validarLogin($_POST, $db);
+        //llenamos el array de errores, esta vez con nuestra instancia de Validator, haciendo uso de sus metodos.
+		if (count($errores) == 0) {
+            $email = $_POST["email"];
+			// si no hay errores, LOGUEAR
+            $auth->login($email);
+            //nuestra instancia de Auth usa su metodo login() para loguear al usuario
+      		header("Location:perfil.php");
+			exit;
+		}
+	}
 
-if ($_POST) {
 
-    $errores = validarLogin($_POST);
-
-    if (!$errores) {
-
-        $errores = loguear($_POST);
-
-        if (!$errores) {
-            header('location: index.php');
-            exit;
-        }
-    }
-
-}
+?>
 
 ?>
 <!DOCTYPE html>
@@ -35,29 +37,22 @@ if ($_POST) {
     <title>Login</title>
   </head>
   <body>
-<?php
-    if (isset($_SESSION) && empty($_SESSION)){
-    include_once ('navigation.php');
-?>
-<div class="row">
-    <div class="form">
-    <form action="" method="post">
-        <?php
-            if ($errores) {?>
-                <div class="error2">
-                    <div ><strong>Error!</strong></div>
-                    <ul>
-                        <?php
+      <?php
+          if (isset($_SESSION) && empty($_SESSION)){
+          include_once ('navigation.php');
+      ?>
+      <div class="row">
+          <div class="form">
+            <?php if(count($errores) > 0) {?>
 
-                        foreach($errores as $error) {
-                        ?>
-                            <li><?php echo $error ?></li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            <?php } ?>
+              <h3>Ops! Lo siento, tu Usuario o Contraseña son invalidos</h3>
+              <a href="login.php">Volver</a>
+
+            <?php } else {?>
+            <form action="login.php" method="post">
+
                 <h3>¡Hola! Ingresa tus datos</h3>
-                <input type="text" class="form-control" id="email" name="email" value="<?php echo ($_POST['email'] ?? '') ?>" placeholder="Email">
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
 
                 <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
 
@@ -65,6 +60,7 @@ if ($_POST) {
 
         <input type="submit" class="button" value="ENTRAR" />
         <p class="message">No estás registrado? <a href="registro.php">Registrarse</a></p>
+        <?php } ?>
     </form>
 </div>
 <?php include_once ('footer.php'); ?>

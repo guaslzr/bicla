@@ -1,27 +1,44 @@
-<?php require_once ('global.php');?>
-
 <?php
-require_once ('funciones/auth.php');
-require_once ('funciones/validaciones.php');
-?>
 
-<?php
-$errores=[];
+	include_once("loader.php");
+	require_once("classes/Usuario.php");
 
-if ($_POST){
+	//como solamente registro con email, creo variable vacia para llamarla en el Value del campo email del form
+	$emailDefault = "";
 
-  $errores = validarRegistro($_POST);
+	$errores = [];
 
-  if(!$errores){
+	if ($_POST) {
+		//Lleno el array de errores como antes, pero usando la instancia del objeto Validator
+		$errores = $validator->validarInformacion($_POST, $db);
 
-    $errores=registrar($_POST);
 
-    if (!$errores){
-      header ('location: index.php');
-      exit;
-    }
-  }
-}
+		if (!isset($errores["email"])) {
+			//si no hay errores en el mail, lo guardo para el caso que la pass este mal, asi lo mantengo en el form y el usuario no tiene que ponerlo de nuevo
+			$emailDefault = $_POST["email"];
+		}
+
+		if (count($errores) == 0) {
+			//Si count() de $errores = 0, creo mi nueva instancia de usuario
+			$usuario = new Usuario($_POST["email"], $_POST["password"]);
+			//Como en ESTE caso mi clase usuario tiene tambien la responsabilidad de guardar su imagen, la guardamos
+			$usuario->guardarImagen($usuario->getEmail());
+			//Aca guardamos el user en nuestra base de datos
+			$usuario = $db->guardarUsuario($usuario);
+			//Lo pasamos por auth para derivarlo al perfil
+			$auth->login($_POST["email"]);
+			header("Location: perfil.php");
+			exit;
+
+		}
+	}
+
+	//Aca, si hay sesion iniciada, no tiene por que ver el registro, asi que se deriva al perfil directamente en caso de que quiera ingresar a registro.php
+	if ($auth->loginControl()) {
+		header("Location:perfil.php");
+		exit;
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -31,60 +48,36 @@ if ($_POST){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Registro</title>
     <link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
-    <?php
-      if (isset($_SESSION) && empty($_SESSION)){
-      $pageTitle='Registracion';
-      include_once('navigation.php');
-    ?>
-
-    <div class="login-page">
-      <?php
-      if($errores){
-      ?>
-        <div class="alert alert-danger">
-            <div><strong>Error!</strong></div>
-            <ul>
-                <?php
-                foreach($errores as $error) {
-                ?>
-                    <li><?php echo $error ?></li>
-                <?php } ?>
-            </ul>
-        </div>
-    <?php } ?>
-
+			<?php include_once('navigation.php'); ?>
       <div class="form">
-        <form action="" method="POST" enctype="multipart/form-data" class="register-form">
-          <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($_POST['nombre'] ?? '') ?>" placeholder="Ingresa tu Nombre" required/>
+        <form action="" class="register-form" action="registro.php" method="post" enctype="multipart/form-data">
+          <input type="text" class="form-control" id="nombre" name="name" value="" placeholder="Ingresa tu Nombre" required/>
 
-          <input type="text" class="form-control" id="apellido" name="apellido" value="<?php echo($_POST['apellido'] ?? '') ?>" placeholder="Ingresa tu Apellido" required/>
+          <input type="text" class="form-control" id="apellido" name="apellido" value="" placeholder="Ingresa tu Apellido" required/>
 
-          <input type="text" class="form-control" id="username" name="username" value="<?php echo ($_POST['username'] ?? '') ?>" placeholder="Ingresa tu Nombre de Usuario" require/>
+          <input type="text" class="form-control" id="username" name="username" value="" placeholder="Ingresa tu Nombre de Usuario" require/>
 
-          <input type="email" class="form-control" id="email" name="email" value="<?php echo ($_POST['email'] ?? '') ?>"placeholder="Ingresa tu email" required/>
+          <input type="email" class="form-control" id="email" name="email" value="<?=$emailDefault?>" placeholder="Ingresa tu email" required/>
 
-          <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingrese Contraseña" required/>
+          <input type="password" class="form-control" id="contrasena" name="password" placeholder="Ingrese Contraseña" required/>
 
-          <input type="password" class="form-control" id="contrasena-confirm" name="contrasena-confirm" placeholder="Confirma tu contraseña" required/>
-
-          <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo ($_POST['telefono'] ?? '') ?>"placeholder="Numero de telefono (opcional)">
+          <input type="password" class="form-control" id="contrasena-confirm" name="cpassword" placeholder="Confirma tu contraseña" required/>
 
           <label for="file" class="message">Selecciona una foto de perfil</label>
 
-          <input type="file" name="avatar" accept="image/*" />
+          <input type="file" name="avatar" />
 
-          <p class="message"><input type="checkbox" name="terminos">Acepto los términos y condiciones</p>
+          <p class="message"><input type="checkbox" name="terminos" value="">Acepto los términos y condiciones</p>
 
-          <input type="submit" class="button" value="Registrarse"/>
+          <input type="submit" class="button" value="Registrarme"/>
 
           <p class="message">Ya estás registrado? <a href="login.php">Ingresa acá</a></p>
         </form>
       </div>
     </div>
      <?php include_once('footer.php'); ?>
-     <?php }else header('Location: index.php') ?>
   </body>
 </html>

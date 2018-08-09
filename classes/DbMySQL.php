@@ -15,8 +15,8 @@
         {
             $dsn = 'mysql:host=localhost;dbname=bicla_db;
             charset=utf8;port=3306';
-            $username ="root";
-            $password = "";
+            $username = 'root';
+            $password = '';
 
             try {
                 $this->conexion = new PDO($dsn, $username, $password);

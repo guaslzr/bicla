@@ -4,9 +4,8 @@
 include_once('global.php');
 include_once('classes/Producto.php');
 
-$FX1 = new Producto (1,'FX1', 17446, '$18000', 2, 'Marca', 'Hibrida');
-
-var_dump($FX1);
+//$FX1 = new Producto (1,'FX1', 17446, '$18000', 2, 'Marca', 'Hibrida');
+//var_dump($FX1);
 
 ?>
 
@@ -81,7 +80,7 @@ var_dump($FX1);
 
             <!-- Precio -->
             <div class="precio">
-              <span>$ 18000</span>
+              <span>$ 12000</span>
               <a href="#" class="agregar-carrito">Agregar al carrito</a>
             </div>
           </div>

@@ -17,9 +17,9 @@
     <header>
       <?php include_once('navigation.php') ?>
       </header>
-        <div class="banner1" style="display: grid;">
+        <div class="banner1" style="display: grid;"><a href="producto.php">
         <img src="img/bg.png">
-        </div>
+        </a></div>
           <section class="options">
               <div class="container">
                   <img src="img/arma_bici-img.png" href="#" class="image">
